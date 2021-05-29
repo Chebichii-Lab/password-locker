@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.8
 
+from credentials import Credentials
 from user import User 
 def create_user(username, password):
     '''
@@ -18,7 +19,15 @@ def check_existing_user(username, password):
     '''
     function that returns saved users
     '''
-    return User.user_exist(username, password)  
+    return User.user_exist(username, password) 
+
+
+def create_credentials(account,username,password):
+    '''
+    function to create new credentials
+    ''' 
+    new_credentials= Credentials(account,username,password)
+    return new_credentials   
 
 
 def main():

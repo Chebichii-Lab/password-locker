@@ -1,6 +1,7 @@
 import unittest 
 from credentials import Credentials # importing the credentials class
 
+
 class TestCredentials(unittest.TestCase):
     '''
     test class defines test cases for the credentials 
@@ -23,9 +24,48 @@ class TestCredentials(unittest.TestCase):
         '''
         self.new_credentials.save_credentials() # saving new credentails
         self.assertEqual(len(Credentials.credentials_list), 1)
-        
 
+    def tearDown(self):
+        '''
+        tear down method does clean up after each test case has been run
+        '''
+        Credentials.credentials_list =[]
 
+    def test_save_multiple_credentials(self):
+        '''
+        test to check if we can save multiple credentials
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Twitter","papa","guks001")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list), 2)
 
+    def test_delete_credentials(self):
+        '''
+        test to see if we can remove a credential from our credentials list
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Twitter","papa","guks001")
+        test_credentials.save_credentials()
+        self.new_credentials.delete_credentials() # deleting credentials object
+        self.assertEqual(len(Credentials.credentials_list), 1)
+
+    def test_find_credentials_by_username(self):
+        '''
+        test to see if we can find credentials by username and display information
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Twitter","papa","guks001") # new credential
+        test_credentials.save_credentials()
+        found_credentials = Credentials.find_by_username("papa")
+        self.assertEqual(found_credentials.password, test_credentials.password) 
+
+    def test_display_all_credentials(self):
+        '''
+        method that returns a list of all credentials saved
+        '''
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)  
+
+   
 if __name__ == '__main__':
     unittest.main()        
