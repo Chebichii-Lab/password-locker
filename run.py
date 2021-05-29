@@ -35,17 +35,26 @@ def main():
                 print("password ....")
                 password = input()
                 print("Confirm password ....")
+                confirm_password = input()
         
     else:
                 save_user(create_user(username, password))
                 print(f'Congratulations 🎉, New Account has been created for: {username} using password: {password}')
                 print("Proceed to login")
                 print("username")
-                entered_first_name = input()
+                entered_username= input()
                 print("your password")
                 entered_password = input()
 
-
+    while entered_username != username or entered_password != password:
+                print("Invalid username or password")
+                print('username')
+                entered_username = input()
+                print("Your password")
+                entered_password = input()
+    else:                
+        
+                print(f'Welcome back  {entered_username} 😍. please choose an option to continue')
 
 
 if __name__ == '__main__':
