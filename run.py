@@ -2,6 +2,8 @@
 
 from credentials import Credentials
 from user import User 
+from password import *
+
 def create_user(username, password):
     '''
     function used to create a new user
@@ -56,38 +58,58 @@ def display_credentials():
 
 def main():
     print("Hello, Welcome to FUTURE SAVER!. Create an account to save your passwords.")
-    print('Enter your username')
-    username = input()
-    print("What's your password")
-    password = input()
-    print("Confirm password ....")
-    confirm_password = input()
-    
-    while confirm_password != password:
-                print("Password did not match")
-                print("password ....")
+    while True:
+        print('\n')
+        print('**********')
+        print('Use these short codes to navigate : cu - create a new user, lg - login to your account, ex -exit the password locker')
+        print('**********')
+
+        shortCode = input().lower()
+
+        if shortCode == 'cu':
+            print('Enter your username')
+            username = input()
+
+            passResponse = input(
+            'Do you want a generated password? \n  Respond with \'y\' for yes or \'n\' for no: ').lower()
+
+            if passResponse == 'y':
+                createdPass = passwordGenerator(getPassLength())
+                password= createdPass
+
+                print(f'New password ({str(len(createdPass))}):------>{createdPass}')
+            else:
+
+                print("What's your password")
                 password = input()
                 print("Confirm password ....")
                 confirm_password = input()
-        
-    else:
-                save_user(create_user(username, password))
-                print(f'Congratulations 🎉, New Account has been created for: {username} using password: {password}')
-                print("Proceed to login")
-                print("username")
-                entered_username= input()
-                print("your password")
-                entered_password = input()
+    
+            while confirm_password != password:
+                    print("Password did not match")
+                    print("password ....")
+                    password = input()
+                    print("Confirm password ....")
+                    confirm_password = input()
+            
+            else:
+                    save_user(create_user(username, password))
+                    print(f'Congratulations 🎉, New Account has been created for: {username} using password: {password}')
+                    print("Proceed to login")
+                    print("username")
+                    entered_username= input()
+                    print("your password")
+                    entered_password = input()
 
-    while entered_username != username or entered_password != password:
-                print("Invalid username or password")
-                print('username')
-                entered_username = input()
-                print("Your password")
-                entered_password = input()
-    else:                
-        
-                print(f'Welcome back  {entered_username} 😍. please choose an option to continue')
+            while entered_username != username or entered_password != password:
+                    print("Invalid username or password")
+                    print('username')
+                    entered_username = input()
+                    print("Your password")
+                    entered_password = input()
+            else:                
+            
+                    print(f'Welcome back  {entered_username} 😍. please choose an option to continue')
 
 
 if __name__ == '__main__':
