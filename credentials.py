@@ -14,7 +14,7 @@ class Credentials :
         '''
         Credentials.credentials_list.append(self)  
 
-    def delete_credentials(self):
+    def del_credentials(self):
         '''
         delete_credentials method deletes a saved credential from the credentials_list
         '''
@@ -35,5 +35,16 @@ class Credentials :
         method that returns the credential list
         '''
         return cls.credentials_list
+
+    @classmethod
+    def credentials_exist(cls, username):
+        '''
+        method that checks if a credential exists
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.username == username:
+                return True
+
+        return False
 
     

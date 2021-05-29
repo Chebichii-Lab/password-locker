@@ -40,14 +40,14 @@ class TestCredentials(unittest.TestCase):
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 2)
 
-    def test_delete_credentials(self):
+    def test_del_credentials(self):
         '''
         test to see if we can remove a credential from our credentials list
         '''
         self.new_credentials.save_credentials()
         test_credentials = Credentials("Twitter","papa","guks001")
         test_credentials.save_credentials()
-        self.new_credentials.delete_credentials() # deleting credentials object
+        self.new_credentials.del_credentials() # deleting credentials object
         self.assertEqual(len(Credentials.credentials_list), 1)
 
     def test_find_credentials_by_username(self):
@@ -64,7 +64,20 @@ class TestCredentials(unittest.TestCase):
         '''
         method that returns a list of all credentials saved
         '''
-        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)  
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list) 
+
+    def test_exists_credentials(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the credentials.
+        '''
+
+        self.new_credential.save_credential()
+        test_credentials = Credentials("Twitter","papa", "guks001") # new contact
+        test_credentials.save_credentials()
+
+        credentials_exists = Credentials.credentials_exist("papa")
+
+        self.assertTrue(credentials_exists)   
 
    
 if __name__ == '__main__':
