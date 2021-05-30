@@ -7,7 +7,7 @@ This application allows users to save thier passwords for the various social med
 Storing their details for those accounts for easier rememberance.
 
 ### Project Ser Up
-1. Git clone
+1. Git clone    https://github.com/Chebichii-Lab/password-locker.git
 2. Navigate to the folder using the terminal.
 3. Run the file ./run to manage your password.
 
