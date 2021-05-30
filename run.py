@@ -108,6 +108,7 @@ def main():
                     entered_password = input()
 
         elif shortCode == 'lg':
+
                     print('Enter your username: ')
                     defaultUserName = input()
 
@@ -203,14 +204,20 @@ def main():
                                             username = find_credentials(username)
                                             del_credentials(username)
                                             print(
-                                                f"Account {username.account}deleted successfully")
-                                    else:
-                                        print('\n')
-                                        print("dcfailed")
+                                                f"Account {username.account} deleted successfully")
+                                        else:
+                                            print('\n')
+                                            # print("dcfailed")
 
-                                    if shortCode == "ex": 
-                                        print('Goodbye,have a beautiful time')
+                                    elif shortCode == "ex": 
+                                        print('Goodbye,have a beautiful time!!!')
                                         break
+                                    else:
+                                        print("Invalid shortcode")
+
+        elif shortCode == "ex":
+            print("Bye")
+            break
 if __name__ == '__main__':
     main()     
   
