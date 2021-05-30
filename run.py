@@ -197,7 +197,7 @@ def main():
                                             print("You dont seem to have any contacts saved yet")
                                             print('\n')
                                     elif shortCode == "dc":
-                                        print("Enter Account Name You Would Like To Delete")
+                                        print("Enter User Name For The Account You Would Like To Delete")
                                         username = input()
                                         if  check_existing_credentials(username):
                                             print("Please wait ...")
