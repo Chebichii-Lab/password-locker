@@ -67,7 +67,7 @@ def main():
     while True:
         print('\n')
         print('**********')
-        print('Use these short codes to navigate : cu - create a new user, lg - login to your account, ex -exit the future saver')
+        print('USE THESE SHORT CODES TO NAVIGATE : cu - create a new user, lg - login to your account, ex -exit the future saver')
         print('**********')
 
         shortCode = input().lower()
@@ -131,7 +131,7 @@ def main():
                             while True:
                                     print('\n ………')
                                     print(
-                                        'Use these short codes to navigate through credentials : ac - add credential, lc - list credentials, dc - delete credential, ex - exit')
+                                        'USE THESE SHORT CODES TO NAVIGATE THROUGH CREDENTIALS : ac - add credential, lc - list credentials, dc - delete credential, ex - exit')
                                     print('………')
 
                                     shortCode = input().lower()
