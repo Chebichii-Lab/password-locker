@@ -11,17 +11,18 @@ Storing their details for those accounts for easier rememberance.
 2. Navigate to the folder using the terminal.
 3. Run the file ./run to manage your password.
 
-
 ### Technologies Used
 1. Python 3.8.5
 
 # Behaviour Driven Development(B.D.D)
 Using short codes provided;
-    1. cu - Create new user
-    2. lg - Log into your account
+
+    1. cu - Create new user.
+    2. lg - Log into your account.
     3. ex - Exit from password locker.
+
     1. ac - Add credentials.
-    2. lc - List credentials
-    3. dc - Delete credentials
-    4. ex - Exit from creating credentials 
+    2. lc - List credentials.
+    3. dc - Delete credentials.
+    4. ex - Exit from creating credentials.
 
