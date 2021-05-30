@@ -17,11 +17,14 @@ Storing their details for those accounts for easier rememberance.
 3. Run the file 
 
 ## Running the application
+In your terminal, run the folowing commands;
+
     $ chmod +x password_locker.py
     $ ./password_locker.py
 
-### Technologies Used
+## Technologies Used
 1. Python 3.8.5
+2. GIT
 
 # Behaviour Driven Development(B.D.D)
 Using short codes provided;
