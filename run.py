@@ -67,17 +67,17 @@ def main():
     while True:
         print('\n')
         print('**********')
-        print('Use these short codes to navigate : cu - create a new user, lg - login to your account, ex -exit the password locker')
+        print('Use these short codes to navigate : cu - create a new user, lg - login to your account, ex -exit the future saver')
         print('**********')
 
         shortCode = input().lower()
 
         if shortCode == 'cu':
-            print('Enter your username')
+            print('Enter Your Username')
             username = input()
 
             passResponse = input(
-            'Do you want a generated password? \n  Respond with \'y\' for yes or \'n\' for no: ').lower()
+            'Do you want a generated password? \n  Respond with \'y\' for YES or \'n\' for NO: ').lower()
 
             if passResponse == 'y':
                 createdPass = passwordGenerator(getPassLength())
@@ -100,7 +100,7 @@ def main():
             
             else:
                     save_user(create_user(username, password))
-                    print(f'Congratulations 🎉, New Account has been created for: {username} using password: {password}')
+                    print(f'CONGRATULATIONS!! 🎉, New Account has been created for: {username} using password: {password}')
                     print("Proceed to login")
                     print("username")
                     entered_username= input()
@@ -109,7 +109,7 @@ def main():
 
         elif shortCode == 'lg':
 
-                    print('Enter your username: ')
+                    print('Enter Your Username: ')
                     defaultUserName = input()
 
                     print('Enter password: ')
@@ -126,7 +126,7 @@ def main():
                             entered_password = input()
                     else:                
                     
-                            print(f'Welcome back  {entered_username} 😍. please choose an option to continue')
+                            print(f'WELCOME {entered_username} 😍. Please choose an option to proceed')
 
                             while True:
                                     print('\n ………')
@@ -137,7 +137,7 @@ def main():
                                     shortCode = input().lower()
                                     if shortCode == 'ac':
                                         print('----------')
-                                        print('Save new credential...')
+                                        print('Save New Credential...')
                                         print('----------')
                                         print('Enter account to save credentials for: ')
                                         credAccount = input()
@@ -148,7 +148,7 @@ def main():
                                         print('…')
 
                                         passResponse = input(
-                                            'Do you want a generated password? \n  Respond with \'y\' for yes or \'n\' for no: ').lower()
+                                            'Do you want a generated password? \n  Respond with \'y\' for YES or \'n\' for NO: ').lower()
 
                                         if passResponse == 'y':
                                             createdPass = passwordGenerator(getPassLength())
@@ -162,7 +162,7 @@ def main():
                                             print('Enter password: ')
                                             credPass = input()
 
-                                            print('Comfirm password: ')
+                                            print('Confirm Password: ')
                                             confirmedPass = input()
 
                                             print('\n')
@@ -178,14 +178,14 @@ def main():
                                                 save_credentials(create_credentials(
                                                     credAccount, credUserName, credPass))
                                                 print(
-                                                    f'Congratulations your credentials for {credAccount} was successfully created!')
+                                                    f'CONGRATULATIONS!! Your credentials for {credAccount} was successfully created!')
                                                 print('\n')
 
                                     # source of error have a look
                                     #
                                     elif shortCode == 'lc':
                                         if display_credentials():
-                                            print('Here is a list of all your contacts')
+                                            print('HERE IS A LIST OF ALL YOUR ACCOUNTS')
                                             print('\n')
                                             for credential in display_credentials():
                                                 print(
@@ -197,14 +197,14 @@ def main():
                                             print("You dont seem to have any contacts saved yet")
                                             print('\n')
                                     elif shortCode == "dc":
-                                        print("Enter account name you would like to delete")
+                                        print("Enter Account Name You Would Like To Delete")
                                         username = input()
                                         if  check_existing_credentials(username):
                                             print("Please wait ...")
                                             username = find_credentials(username)
                                             del_credentials(username)
                                             print(
-                                                f"Account {username.account} deleted successfully")
+                                                f"ACCOUNT {username.account} Deleted Successfully!!!")
                                         else:
                                             print('\n')
                                             # print("dcfailed")
@@ -216,7 +216,7 @@ def main():
                                         print("Invalid shortcode")
 
         elif shortCode == "ex":
-            print("Bye")
+            print("THANK YOU FOR CHOOSING FUTURE SAVER! GOODBYE")
             break
 if __name__ == '__main__':
     main()     
