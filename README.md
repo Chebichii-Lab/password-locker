@@ -19,10 +19,8 @@ Using short codes provided;
     1. cu - Create new user
     2. lg - Log into your account
     3. ex - Exit from password locker.
-
     1. ac - Add credentials.
     2. lc - List credentials
     3. dc - Delete credentials
     4. ex - Exit from creating credentials 
 
-    
